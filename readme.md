@@ -113,6 +113,8 @@ while (true) {
    php todo.php
    ```
 
+   **If PHP is not recognized**, see the XAMPP section below.
+
 3. **Use the application**:
    - Option 1: List all tasks
    - Option 2: Add a new task
@@ -121,24 +123,28 @@ while (true) {
 
 #### ⚠️ Important Note: Using XAMPP for PHP
 
-If you're using **XAMPP** instead of a standalone PHP installation, you need to:
+If you're using **XAMPP** instead of a standalone PHP installation:
 
 1. **Install XAMPP** from [apachefriends.org](https://www.apachefriends.org/) if not already installed
-2. **Use the full PHP path** to run the application:
 
-   **From VS Code Terminal:**
+2. **Try running with simple command first**:
+   ```bash
+   php todo.php
+   ```
+
+3. **If PHP is not recognized**, use the full XAMPP PHP path:
    ```bash
    C:\xampp\php\php.exe todo.php
    ```
 
-   **From Command Prompt or PowerShell:**
-   ```bash
-   C:\xampp\php\php.exe todo.php
-   ```
+4. **Why this happens**: XAMPP PHP is not automatically added to your system PATH by default.
 
-3. **Why this is needed**: XAMPP PHP is not automatically added to your system PATH, so you must specify the full path to the PHP executable located in your XAMPP installation directory.
+5. **Recommended solution - Add XAMPP PHP to PATH**:
+   - Add `C:\xampp\php` to your Windows PATH environment variable
+   - This allows you to use `php todo.php` from any directory
+   - You'll only need to do this once
 
-4. **Alternative - Add XAMPP PHP to PATH**: To use just `php todo.php` instead of the full path, you can add `C:\xampp\php` to your Windows PATH environment variable. This allows PHP to be accessed from any directory without typing the full path.
+**Note**: Once XAMPP PHP is in your PATH, you can use the simple `php todo.php` command just like in the main instructions above.
 
 #### Option 2: Running with WSL (Windows Subsystem for Linux)
 
@@ -258,6 +264,66 @@ wsl -l -v
 
 # Update WSL to latest version
 wsl --update
+```
+
+### Useful Terminal Commands
+
+#### Basic File Operations (works in PowerShell, WSL, and most terminals)
+
+```bash
+# List all files in current directory
+ls
+
+# Navigate to a directory
+cd folder-name
+
+# Go back to previous directory
+cd ..
+
+# Show current directory path
+pwd  # WSL/Linux
+or
+Get-Location  # PowerShell
+```
+
+#### Creating and Editing Files
+
+**Using nano (text editor):**
+```bash
+# Create or edit a file
+nano filename.php
+
+# Save and exit in nano:
+# 1. Press Ctrl+O then Enter to save
+# 2. Press Ctrl+X to exit
+```
+
+**Using VS Code from terminal:**
+```bash
+# Open current directory in VS Code
+code .
+
+# Open specific file in VS Code
+code filename.php
+```
+
+#### Other Useful Commands
+
+```bash
+# Clear the terminal screen
+clear  # WSL/Linux
+or
+cls  # Windows PowerShell
+
+# Copy a file
+cp source.php destination.php  # WSL/Linux
+or
+Copy-Item source.php destination.php  # PowerShell
+
+# Delete a file
+rm filename.php  # WSL/Linux
+or
+Remove-Item filename.php  # PowerShell
 ```
 
 ### Example Usage
