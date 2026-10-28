@@ -35,5 +35,16 @@ while (true) {
                 }
             }
             break;
+              case '2':
+            echo "\nEnter task description: ";
+            $newTask = trim(fgets(STDIN));
+            if (!empty($newTask)) {
+                $tasks[] = $newTask;
+                file_put_contents($storageFile, json_encode($tasks, JSON_PRETTY_PRINT));
+                echo "✅ Task added successfully!\n";
+            } else {
+                echo "❌ Task cannot be empty!\n";
+            }
+            break;
     }
 }
