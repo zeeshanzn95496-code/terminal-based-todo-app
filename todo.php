@@ -65,7 +65,7 @@ while (true) {
             exit(0);
 
         default:
-            echo "\n❌ Invalid option. Please select 1, 2, 3, or 4.\n";
+            echo "\n Invalid option. Please select 1, 2, 3, or 4.\n";
             break;
     }
 }
