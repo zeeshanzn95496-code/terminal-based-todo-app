@@ -19,12 +19,13 @@ while (true) {
     echo "2. Add a New Task\n";
     echo "3. Delete a Task\n";
     echo "4. Exit Application\n";
-    echo "Choose an option (1-4):" ;
+    echo "Choose an option (1-4): ";
 
      // 3. Read user input from the terminal
     $choice = trim(fgets(STDIN));
 
     switch ($choice) {
+        
         case '1':
             echo "\n--- CURRENT TASKS ---\n";
             if (empty($tasks)) {
@@ -35,7 +36,7 @@ while (true) {
                 }
             }
             break;
-              case '2':
+        case '2':
             echo "\nEnter task description: ";
             $newTask = trim(fgets(STDIN));
             if (!empty($newTask)) {
@@ -46,7 +47,7 @@ while (true) {
                 echo " Task cannot be empty!\n";
             }
             break;
-             case '3':
+        case '3':
             echo "\nEnter the number of the task to delete: ";
             $taskNum = (int)trim(fgets(STDIN)) - 1;
 
