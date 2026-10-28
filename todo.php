@@ -41,9 +41,9 @@ while (true) {
             if (!empty($newTask)) {
                 $tasks[] = $newTask;
                 file_put_contents($storageFile, json_encode($tasks, JSON_PRETTY_PRINT));
-                echo "✅ Task added successfully!\n";
+                echo " Task added successfully!\n";
             } else {
-                echo "❌ Task cannot be empty!\n";
+                echo " Task cannot be empty!\n";
             }
             break;
              case '3':
@@ -51,12 +51,12 @@ while (true) {
             $taskNum = (int)trim(fgets(STDIN)) - 1;
 
             if (isset($tasks[$taskNum])) {
-                echo "⚠️ Deleted: " . $tasks[$taskNum] . "\n";
+                echo "Deleted: " . $tasks[$taskNum] . "\n";
                 array_splice($tasks, $taskNum, 1); // Remove item and re-index array
                 file_put_contents($storageFile, json_encode($tasks, JSON_PRETTY_PRINT));
-                echo "✅ Task removed.\n";
+                echo " Task removed.\n";
             } else {
-                echo "❌ Invalid task number!\n";
+                echo " Invalid task number!\n";
             }
             break;
 
