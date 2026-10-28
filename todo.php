@@ -20,5 +20,20 @@ while (true) {
     echo "3. Delete a Task\n";
     echo "4. Exit Application\n";
     echo "Choose an option (1-4):" ;
-    
+
+     // 3. Read user input from the terminal
+    $choice = trim(fgets(STDIN));
+
+    switch ($choice) {
+        case '1':
+            echo "\n--- CURRENT TASKS ---\n";
+            if (empty($tasks)) {
+                echo "No tasks found! Rest easy.\n";
+            } else {
+                foreach ($tasks as $index => $task) {
+                    echo "[" . ($index + 1) . "] " . $task . "\n";
+                }
+            }
+            break;
+    }
 }
