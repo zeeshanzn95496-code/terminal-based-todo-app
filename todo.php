@@ -46,5 +46,26 @@ while (true) {
                 echo "❌ Task cannot be empty!\n";
             }
             break;
+             case '3':
+            echo "\nEnter the number of the task to delete: ";
+            $taskNum = (int)trim(fgets(STDIN)) - 1;
+
+            if (isset($tasks[$taskNum])) {
+                echo "⚠️ Deleted: " . $tasks[$taskNum] . "\n";
+                array_splice($tasks, $taskNum, 1); // Remove item and re-index array
+                file_put_contents($storageFile, json_encode($tasks, JSON_PRETTY_PRINT));
+                echo "✅ Task removed.\n";
+            } else {
+                echo "❌ Invalid task number!\n";
+            }
+            break;
+
+        case '4':
+            echo "\nGoodbye! Have a productive day.\n";
+            exit(0);
+
+        default:
+            echo "\n❌ Invalid option. Please select 1, 2, 3, or 4.\n";
+            break;
     }
 }
